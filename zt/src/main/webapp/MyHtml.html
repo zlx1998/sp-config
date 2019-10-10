@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyHtml.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  <body>
+    <div id="div1"></div>
+  <script type="text/javascript">
+  	function getDate(){
+  		// 获取时间
+  		var date = new Date();
+  		// 格式化
+  		var d1 = date.toLocaleString();
+  		// 获取div
+  		var div1 = document.getElementById("div1");
+  		div1.innerHTML = d1;
+  	}
+		// 使用定时器实现一秒写一次时间
+		setInterval("getDate()" ,1000);
+  </script>
+    
+  </body>
+</html>
