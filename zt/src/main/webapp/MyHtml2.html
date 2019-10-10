@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyHtml.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+   
+
+  </head>
+  <body>
+   <input type="checkbox" id="boxid" onclick="selAllNo()"/>全选/全不选
+    <br>
+    <input type="checkbox" name="love"/>篮球
+    <input type="checkbox" name="love"/>羽毛球
+    <input type="checkbox" name="love"/>排球
+    <input type="checkbox" name="love"/>乒乓球
+    <br>
+    <input type="button" value="全选" onclick="selAll()"/>
+    <input type="button" value="全不选" onclick="selNo()"/>
+    <input type="button" value="反选" onclick="selOther()"/>
+	<script type="text/javascript">
+		function selAllNo(){
+			var box1 = document.getElementById("boxid");
+			if(box1.checked == true){
+				selAll();
+			}else{
+				selNo();
+			}
+		
+		}
+		function selOther(){
+			loves = document.getElementByName("love");
+			for(var i=0;i<loves.length;i++){
+				love1 = love[i];
+				if(love1.checked == true){
+					love1.checked = false;
+				}else{
+					love1.checker = true;
+				}
+			}
+		}
+		  //实现全选的操作
+        function selAll()
+        {
+            /*
+                1.获取要操作的复选框
+                    -使用getElementsByName()
+                2.返回是数组
+                    -判断复选框是否选中
+                    checked = true
+                    -遍历数组
+            */
+            var loves = document.getElementsByName("love");
+            for(var i=0; i<loves.length; i++)
+            {
+                var love1 = love[i];
+                love1.checked = true;
+            }
+        }
+        function selNo()
+        {
+            var loves = document.getElementsByName("love");
+            for(var i=0; i<loves.length; i++)
+            {
+                love1 = loves[i];
+                love1.checked = false;
+            }
+        }
+
+		
+	</script>
+    
+  </body>
+</html>
