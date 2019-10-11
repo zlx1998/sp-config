@@ -24,6 +24,7 @@ public class Redis {
 	    for (String string : list) {
 			System.out.println(string);
 		}
+	    System.out.println("git ");
 	}
 
 }
